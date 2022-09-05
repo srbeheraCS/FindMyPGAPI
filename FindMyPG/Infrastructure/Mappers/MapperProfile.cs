@@ -19,9 +19,8 @@ namespace FindMyPG.Infrastructure.Mappers
             CreateMap<PGInfoModel, PGInfo>();
             CreateMap<PGRoomModel, PGRoom>();
             CreateMap<PGPackageModel, PGPackage>();
-
-
-
+            CreateMap<RoleModel, Role>();
+            CreateMap<UserModel, User>();
         }
     }
 }

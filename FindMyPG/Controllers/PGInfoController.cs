@@ -27,10 +27,10 @@ namespace FindMyPG.Controllers
             if (ModelState.IsValid)
             {
                 _pGInfoService.insertPGInfo(_mapper.Map<PGInfo>(request));
-                return Ok("Success");
+                return OkResult(request,"Success");
             }
 
-            return BadRequest(ModelState);
+            return BadRequestResult(ModelState);
         }
 
     }
