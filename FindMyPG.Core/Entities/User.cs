@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FindMyPG.Core.Entities
 {
-    public class User:IdentityUser<long>
+    public class User: IdentityUser<long>
     {
         public string FirstName { get; set; }
 

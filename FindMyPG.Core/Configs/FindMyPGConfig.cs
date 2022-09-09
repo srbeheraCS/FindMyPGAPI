@@ -10,5 +10,10 @@ namespace FindMyPG.Core.Configs
     {
         public string SqlConnectionString { get; set; }
         public int MaxCount { get; set; }
+        public string JwtSigningKey { get; set; }
+        public string JwtValidAudience { get; set; }
+        public string JwtValidIssuer { get; set; }
+        public double JwtAccessTokenExpireInMinutes { get; set; }
     }
+    
 }

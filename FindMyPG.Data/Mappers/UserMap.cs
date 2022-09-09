@@ -15,6 +15,7 @@ namespace FindMyPG.Data.Mappers
         {
             var table = builder.ToTable("User");
             table.HasKey(x => x.Id);
+            table.HasIndex(x => x.PhoneNumber).IsUnique(true);
             table.HasOne(u => u.PGBooking)
                  .WithOne(p => p.User)
                  .HasForeignKey<PGBooking>(k => k.SeekerId);
