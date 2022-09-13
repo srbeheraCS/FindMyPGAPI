@@ -8,22 +8,22 @@ namespace FindMyPG.Core.PGEngine
 {
     public sealed class Singleton
     {
-        private static Singleton _singleton;
-        private Singleton()
+        private static Singleton instance = null;
+        public Singleton()
         {
 
         }
-        
-        public static Singleton singleton
+        public static Singleton Instance
         {
             get
             {
-                if(_singleton == null)
+                if (instance == null)
                 {
-                    _singleton = new Singleton();
+                    instance = new Singleton();
                 }
-                return _singleton;
+                return instance;
             }
         }
     }
+
 }

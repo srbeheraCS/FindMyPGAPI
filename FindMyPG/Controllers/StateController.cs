@@ -3,6 +3,7 @@ using FindMyPG.Controllers.Base;
 using FindMyPG.Core.Entities;
 using FindMyPG.Models;
 using FindMyPG.Service.States;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FindMyPG.Controllers
@@ -10,6 +11,7 @@ namespace FindMyPG.Controllers
     [Route("api/v1/[controller]")]
     [Produces("application/json")]
     [ApiController]
+    
     public class StateController : BaseController
     {
         private readonly IStateService _stateService;
@@ -46,6 +48,7 @@ namespace FindMyPG.Controllers
         }
         [HttpPost]
         [Route("")]
+        [Authorize(AuthenticationSchemes ="Bearer",Roles ="Owner")]
         public IActionResult InsertState(StateModelRequest request)
         { 
             if(_stateService.GetStateByName(request.StateName) == null)

@@ -9,10 +9,10 @@ namespace FindMyPG.Core.Data
 {
     public interface IRepository<TEntity> where TEntity:BaseEntity
     {
-        void Insert(TEntity entity);
-        void Insert(IEnumerable<TEntity> entities);
-        void Update(TEntity entity);
-        void Delete(TEntity entity);
+        void Insert(TEntity entity, bool saveChanges = false);
+        void Insert(IEnumerable<TEntity> entities, bool saveChanges = false);
+        void Update(TEntity entity, bool saveChanges = false);
+        void Delete(TEntity entity, bool saveChanges = false);
         IQueryable<TEntity> Table { get; }
         TEntity GetByID(object id);
 

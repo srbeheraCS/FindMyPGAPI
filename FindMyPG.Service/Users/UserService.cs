@@ -85,6 +85,7 @@ namespace FindMyPG.Service.Users
             }
             return result;
         }
+        
 
         public async Task<bool> SetAccessTokenAsync(User user, string token, string tokenProvider = "FindMyPG")
         {

@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "WebApplication1": {
+    "FindMyPG": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
@@ -27,5 +27,5 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     }
-  }
+  } 
 }

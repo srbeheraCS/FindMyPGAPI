@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FindMyPG.Core.PGEngine;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,8 @@ namespace FindMyPG.Core.Configs
         public string JwtValidAudience { get; set; }
         public string JwtValidIssuer { get; set; }
         public double JwtAccessTokenExpireInMinutes { get; set; }
+        Singleton singleton = new Singleton();
+        
     }
-    
+   
 }

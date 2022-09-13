@@ -41,17 +41,17 @@ namespace FindMyPG.Service.States
 
         public void InsertState(State state)
         {
-            _stateRepository.Insert(state);
+            _stateRepository.Insert(state, true);
         }
 
         public void InsertStates(List<State> states)
         {
-            _stateRepository.Insert(states);
+            _stateRepository.Insert(states, true);
         }
 
         public void UpdateState(State state)
         {
-            _stateRepository.Update(state);
+            _stateRepository.Update(state, true);
         }
         
     }

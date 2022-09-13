@@ -29,42 +29,53 @@ namespace FindMyPG.Data
         }
         public IQueryable<TEntity> Table => Entities;
 
-        public void Delete(TEntity entity)
+        public void Delete(TEntity entity, bool saveChanges = false)
         {
             if (entity == null)
                 throw new NullReferenceException();
             Entities.Remove(entity);
-            _context.SaveChanges();
+            if (saveChanges)
+                saveChange(saveChanges);
         }
 
         public TEntity GetByID(object id)
         {
             return Entities.Find(id);
         }
-
-        public void Insert(TEntity entity)
+        public void Insert(TEntity entity, bool saveChanges = false)
         {
+
             if (entity == null)
                 throw new NullReferenceException();
             Entities.Add(entity);
-            _context.SaveChanges();
+        }
+        public void saveChange(bool saveChanges)
+        {
+            if (saveChanges)
+            {
+                _context.SaveChanges();
+            }
         }
 
-        public void Insert(IEnumerable<TEntity> entities)
+        public void Insert(IEnumerable<TEntity> entities, bool saveChanges = false)
         {
             if (entities == null)
                 throw new NullReferenceException();
             Entities.AddRange(entities);
-            _context.SaveChanges();
+            if (saveChanges)
+                saveChange(saveChanges);
         }
 
-        public void Update(TEntity entity)
+        public void Update(TEntity entity, bool saveChanges = false)
         {
             if (entity == null)
                 throw new NullReferenceException();
             Entities.Update(entity);
-            _context.SaveChanges();
+            if (saveChanges)
+                saveChange(saveChanges);
 
         }
+
+
     }
 }

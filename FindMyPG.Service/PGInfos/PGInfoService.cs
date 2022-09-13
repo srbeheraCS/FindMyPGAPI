@@ -18,7 +18,7 @@ namespace FindMyPG.Service.PGInfos
 
         public void insertPGInfo(PGInfo pGInfo)
         {
-            _pgInfoRepository.Insert(pGInfo);
+            _pgInfoRepository.Insert(pGInfo, true);
         }
     }
 }

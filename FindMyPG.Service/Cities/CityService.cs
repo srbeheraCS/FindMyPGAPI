@@ -38,17 +38,17 @@ namespace FindMyPG.Service.Cities
 
         public void InsertCities(List<City> cities)
         {
-            _cityRepository.Insert(cities);
+            _cityRepository.Insert(cities, true);
         }
 
         public void InsertCity(City city)
         {
-            _cityRepository.Insert(city);
+            _cityRepository.Insert(city, true);
         }
 
         public void UpdateCity(City city)
         {
-            _cityRepository.Update(city);
+            _cityRepository.Update(city, true);
         }
     }
 }
